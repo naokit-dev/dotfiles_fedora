@@ -39,3 +39,25 @@ sudo ./aws/install
 curl "[https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm](https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm)" -o "session-manager-plugin.rpm"
 sudo dnf install -y session-manager-plugin.rpm
 ```
+
+## Install docker
+[Docker Engine インストール（Fedora 向け） | Docker ドキュメント](https://matsuand.github.io/docs.docker.jp.onthefly/engine/install/fedora/)
+
+```
+sudo dnf -y install dnf-plugins-core
+sudo dnf config-manager \
+    --add-repo \
+    https://download.docker.com/linux/fedora/docker-ce.repo
+
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+```
+
+```
+sudo dnf -y install docker-compose
+```
+
+```
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
